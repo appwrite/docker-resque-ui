@@ -17,7 +17,6 @@ RUN apt-get update && \
         ruby-dev \
         zlib1g-dev \
         build-essential && \
-    apt-get update && \
     gem install --no-document redis \
         resque-web \
         resque-scheduler-web && \
