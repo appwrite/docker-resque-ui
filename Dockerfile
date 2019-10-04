@@ -18,7 +18,7 @@ RUN apt-get update && \
         zlib1g-dev \
         build-essential && \
     apt-get update && \
-    gem install redis \
+    gem install --no-document redis \
         resque-web \
         resque-scheduler-web && \
     apt-get autoremove -y ruby-dev \
