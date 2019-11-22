@@ -3,7 +3,6 @@
 ![Docker Pulls](https://img.shields.io/docker/pulls/appwrite/resque-web.svg)
 [![Discord](https://img.shields.io/discord/564160730845151244)](https://discord.gg/GSeTUeA)
 
-
 User interface container for the Redis [Resque Web UI](https://github.com/resque/resque-web) project. This container include default configuration to allow HTTP basic auth. Not recommended for production environments not running behind a network firewall.
 
 ## Usage
@@ -17,8 +16,8 @@ resque:
   ports:
     - "5678:5678"
   environment:
-    - RESQUE_WEB_HOST=redisserver # (OPTIONAL - Use only if deifferent the default 127.0.0.1)
-    - RESQUE_WEB_PORT=6379  # (OPTIONAL - Use only if deifferent the default 6379)
+    - RESQUE_WEB_HOST=redisserver # (OPTIONAL - Use only if different than the default 127.0.0.1)
+    - RESQUE_WEB_PORT=6379  # (OPTIONAL - Use only if different the default 6379)
     - RESQUE_WEB_HTTP_BASIC_AUTH_USER=user # (OPTIONAL - if not set no password used)
     - RESQUE_WEB_HTTP_BASIC_AUTH_PASSWORD=password  # (OPTIONAL - if not set no password used)
 ```
