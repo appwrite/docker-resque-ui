@@ -37,6 +37,12 @@ docker build -t appwrite/resque-web:v1.0.0 .
 docker push appwrite/resque-web:v1.0.0
 ```
 
+## Find Us
+
+* [GitHub](https://github.com/appwrite)
+* [Discord](https://discord.gg/GSeTUeA)
+* [Twitter](https://twitter.com/appwrite_io)
+
 ## Copyright and license
 
 The MIT License (MIT) [http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php)
