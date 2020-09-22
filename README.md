@@ -10,7 +10,7 @@ User interface container for the Redis [Resque Web UI](https://github.com/resque
 docker-compose.yml
 ```yml
 resque:
-  image: appwrite/resque-web:v1.0.0
+  image: appwrite/resque-web:1.1.0
   links:
     - redis:redisserver
   ports:
@@ -29,12 +29,12 @@ docker run --rm -p 5678:5678 appwrite/resque-web:v1.0.0
 
 ## Build
 ```bash
-docker build -t appwrite/resque-web:v1.0.0 .
+docker build -t appwrite/resque-web:1.0.0 .
 ```
 
 ## Push
 ```bash
-docker push appwrite/resque-web:v1.0.0
+docker push appwrite/resque-web:1.0.0
 ```
 
 ## Find Us
