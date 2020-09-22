@@ -2,6 +2,7 @@
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/appwrite/resque-web.svg)
 [![Discord](https://img.shields.io/discord/564160730845151244)](https://discord.gg/GSeTUeA)
+[![Travis CI](https://badgen.net/travis/appwrite/docker-resque-ui?label=build)](https://travis-ci.org/appwrite/docker-resque-ui)
 
 User interface container for the Redis [Resque Web UI](https://github.com/resque/resque-web) project. This container include default configuration to allow HTTP basic auth. Not recommended for production environments not running behind a network firewall.
 
