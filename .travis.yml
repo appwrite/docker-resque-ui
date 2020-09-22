@@ -17,7 +17,7 @@ install:
 script:
 - docker ps
 - >
-  if : >/dev/tcp/localhost/5601; then
+  if : >/dev/tcp/localhost/5600; then
     echo 'Internet available.'
     exit 0
   else
