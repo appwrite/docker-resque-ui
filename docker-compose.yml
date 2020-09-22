@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  redis:
+    image: redis:5.0
+    container_name: resque-redis
+    restart: unless-stopped
+    networks:
+      - resque
+  
+  resque:
+    container_name: resque-ui
+    build:
+      context: .
+    restart: unless-stopped
+    networks:
+      - resque
+    ports:
+      - "5600:5678"
+    environment:
+      - RESQUE_WEB_HOST=redis
+      - RESQUE_WEB_PORT=6379
+
+networks:
+  resque:
