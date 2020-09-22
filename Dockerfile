@@ -1,16 +1,11 @@
-FROM ubuntu:18.04
+FROM ruby:2.7-alpine
 
 LABEL maintainer="team@appwrite.io"
 
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y ruby ruby-dev zlib1g-dev build-essential && \
-    apt-get update && \
-    gem install redis && \
-    gem install resque-web && \
-    gem install resque-scheduler-web && \
-    apt-get autoremove -y ruby-dev zlib1g-dev build-essential && \
-    apt-get clean -y
+RUN apk add --no-cache bash ruby-dev zlib-dev build-base && \
+  rm -f /var/cache/apk/* && \
+  gem install --no-document redis resque-web resque-scheduler-web && \
+  apk del ruby-dev zlib-dev build-base
 
 ADD ./config.ru /config.ru
 ADD ./entrypoint.sh /entrypoint.sh
@@ -21,4 +16,5 @@ ENV RESQUE_WEB_HOST 127.0.0.1
 ENV RESQUE_WEB_PORT 6379
 
 ENTRYPOINT ["/entrypoint.sh"]
+
 EXPOSE 5678
