@@ -10,6 +10,12 @@ notifications:
 services:
 - docker
 
+before_install:
+  - >
+    if [ ! -z "${DOCKERHUB_PULL_USERNAME:-}" ]; then
+      echo "${DOCKERHUB_PULL_PASSWORD}" | docker login --username "${DOCKERHUB_PULL_USERNAME}" --password-stdin
+    fi
+
 install:
 - docker-compose up -d
 - sleep 10
@@ -24,3 +30,10 @@ script:
     echo 'Offline.'
     exit 1
   fi
+
+deploy:
+  - provider: script
+    edge: true
+    script: docker build -t appwrite/resque-web:$TRAVIS_TAG ./ --push
+    on:
+      tags: true
