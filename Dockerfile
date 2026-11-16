@@ -1,4 +1,4 @@
-FROM ruby:2.7-alpine
+FROM ruby:4.0-alpine@sha256:8ad6909db16ad53b5dc90bb8cc157e5fdd89ba1172798316b95cfd2a61f14b1e
 
 LABEL maintainer="team@appwrite.io"
 
